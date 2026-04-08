@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- CATEGORY -->
+<section class="category">
+  <h2>Campus News</h2>
+
+  <div class="tabs">
+    <button class="tab active">All</button>
+    <button class="tab">News</button>
+    <button class="tab">Academics</button>
+    <button class="tab">Campus Updates</button>
+    <button class="tab">Videos</button>
+  </div>
+</section>
+
+
+<!-- FEATURED -->
+<section class="featured">
+
+  <div class="featured-main">
+    <img src="{% static 'Images/PlaceMN.png' %}" alt="">
+    <h3>Campus Placement Drive Successfully Conducted</h3>
+    <p>
+      Final year students participated in the campus placement drive and received job offer letters from reputed companies.
+    </p>
+  </div>
+
+  <div class="featured-side">
+
+    <div class="side-item">
+      <img src="{% static 'Images/news2.png' %}" alt="">
+      <p>Students Participate in Technical Workshop</p>
+    </div>
+
+    <div class="side-item">
+      <img src="{% static 'Images/news3.png' %}" alt="">
+      <p>Department Achieves Academic Excellence</p>
+    </div>
+
+    <div class="side-item">
+      <img src="{% static 'Images/news4.png' %}" alt="">
+      <p>College Signs MoU with Industry Partners</p>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- TRENDING -->
+<section class="trending">
+  <h3>Trending Topics</h3>
+
+  <div class="tags">
+    <span>#CampusPlacement</span>
+    <span>#CollegeNews</span>
+    <span>#StudentAchievement</span>
+    <span>#TechnicalWorkshop</span>
+    <span>#CampusLife</span>
+  </div>
+</section>
+
+
+<!-- NEWS GRID -->
+<section class="news-grid">
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/hardwork.png' %}">
+      <h4>Hands-on Lab Training</h4>
+      <p>Students gain practical experience through modern laboratory facilities.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/fristyear.png' %}">
+      <h4>First Year Orientation Program</h4>
+      <p>New students were welcomed and introduced to campus life.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/study.png' %}">
+      <h4>Group Study Session</h4>
+      <p>Students collaborate to improve learning.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/Kitpstudent.png' %}">
+      <h4>Student Achievement</h4>
+      <p>Students receive recognition for academic performance.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/learninigTime.png' %}">
+      <h4>Smart Learning Environment</h4>
+      <p>College promotes digital classrooms and modern learning.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/threeFriend.jpg' %}">
+      <h4>Campus Life</h4>
+      <p>Students enjoy a vibrant campus environment.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/friend.jpg' %}">
+      <h4>Campus Life</h4>
+      <p>Students enjoy campus life with activities and learning.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/news2.png' %}">
+      <h4>Campus Updates</h4>
+      <p>Latest updates and student engagement activities.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/gardern.jpg' %}">
+      <h4>KITPS Garden</h4>
+      <p>Beautiful campus environment for students.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+  <div class="news-card">
+    <a href="#">
+      <img src="{% static 'Images/project.jpg' %}">
+      <h4>Student Projects</h4>
+      <p>Innovative projects by engineering students.</p>
+      <p class="read-more">Read More →</p>
+    </a>
+  </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script src="{% static 'JS/News.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <!-- Hero -->
+<div class="news-ticker">
+  <div class="news-track">
+
+    <!-- First loop -->
+    {% for news in newsData %}
+      <span>
+        <a href="{% url 'newsDetail' news.news_slugs %}">
+          {{ news.news_title }}
+        </a>
+      </span>
+    {% endfor %}
+
+    <!-- Second loop (duplicate for smooth loop) -->
+    {% for news in newsData %}
+      <span>
+        <a href="{% url 'newsDetail' news.news_slugs %}">
+          {{ news.news_title }}
+        </a>
+      </span>
+    {% endfor %}
+
+  </div>
+</div>
+  <section class="hero">
+    {% comment %} <h3>Hello</h3>  <p>{{ name }}</p><h3>Your email is</h3><p>{{ email }}</p><h3>And Contact no:</h3><p>Phone: {{ phone }}</p> {% endcomment %}
+    <div class="hero-text">
+      
+      <span class="sub">WELCOME TO ENGINEERING COLLEGE</span>
+      <h1>
+        Welcome to<br>
+        <strong id="typeText">Kothiwal Institute of Technologies & Professinal Studies</strong>
+      </h1>
+      <a href="{% url 'about' %}" class="btn">Get Started</a>
+    </div>
+
+    <div class="hero-img">
+      <img src="{% static 'Images/best.png' %}" alt="Students">
+    </div>
+
+    <!-- circles -->
+    <span class="circle c1"></span>
+    <span class="circle c2"></span>
+    <span class="circle c3"></span>
+  </section>
+  
+{% endblock  %}
+
+{% block scripts %}
+  <script src="{% static 'JS/index.js' %}"></script>
+{% endblock %}  
+

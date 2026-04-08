@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Hero -->
+<section class="about-hero" style="background-image:url('{% static 'images/about-hero.jpg' %}')">
+  <div class="overlay">
+    <h1>About Us</h1>
+    <p>Home / Pages / About</p>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about-wrap">
+  <div class="about-left">
+    <img class="main-img" src="{% static 'Images/@Ravi.png' %}" />
+    <img class="small-img" src="{% static 'Images/study.png' %}" />
+    
+    <div class="exp-badge">
+      <strong>4</strong>
+      <span>Years of<br>Experience</span>
+    </div>
+  </div>
+
+  <div class="about-right">
+    <span class="sub">WHY CHOOSE US</span>
+    <h2>Grow your skills learn with us from anywhere</h2>
+    <p>
+      Learn from professional instructors, flexible schedules, 
+      and real-world projects.
+    </p>
+
+    <ul class="features">
+      <li>✔ Expert Instructors</li>
+      <li>✔ Lifetime Access</li>
+      <li>✔ Online Learning</li>
+      <li>✔ Great Results</li>
+    </ul>
+
+    <button class="btn">Get Started</button>
+  </div>
+</section>
+
+<!-- Courses Section -->
+<section class="courses">
+  <h2>Pick a course to get started your study</h2>
+
+  <div class="course-grid">
+   {% for c in course %}
+
+    <div class="course-card">
+      <img src="{{ c.course_image.url }}" alt="{{ c.course_title }}">
+
+      <div class="card-content">
+        <h4>{{ c.course_title }}</h4>
+        <p>{{ c.course_desc }}</p>
+
+        <!-- FIXED LINE -->
+        <a href="{% url 'course_detail' c.id %}">View Course →</a>
+      </div>
+
+    </div>
+
+{% endfor %}
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="stats-bar">
+  <div>📘 Online Courses</div>
+  <div>🎓 Top Instructors</div>
+  <div>🏆 World Class</div>
+  <div>📜 Certification</div>
+</section>
+
+<!-- Teachers -->
+<section class="teachers">
+  <h2>Meet the teacher who teaches you online</h2>
+
+  <div class="teacher-row">
+    <div class="teacher">
+      <img src="{% static 'Images/salmonSir.png' %}">
+      <p>Mr Salman Siddique</p>
+    </div>
+
+    <div class="teacher">
+      <img src="{% static 'Images/KushalSir.jpg' %}">
+      <p>Mr Kushal Dhaka</p>
+    </div>
+
+    <div class="teacher">
+      <img src="{% static 'Images/sonalMaam.png' %}">
+      <p>Ms Sonal Dhawan</p>
+    </div>
+
+    <div class="teacher">
+      <img src="{% static 'Images/AtulRai.jpg' %}">
+      <p>Dr Atul Rai</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'JS/About.js' %}"></script>
+{% endblock %}

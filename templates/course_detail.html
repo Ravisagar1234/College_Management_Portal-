@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="course-hero">
+  <h1>{{ course.course_title }}</h1>
+  <p>Build your future with this professional course</p>
+</section>
+
+<!-- MAIN SECTION -->
+<section class="course-detail">
+
+  <div class="course-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="course-image">
+      <img src="{{ course.course_image.url }}" alt="{{ course.course_title }}">
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="course-info">
+
+      <h2>{{ course.course_title }}</h2>
+
+      <p class="desc">{{ course.course_desc }}</p>
+
+      <!-- INFO CARDS -->
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h4>📅 Duration</h4>
+          <p>{{ course.duration }}</p>
+        </div>
+
+        <div class="info-card">
+          <h4>💰 Fees</h4>
+          <p>{{ course.fees }}</p>
+        </div>
+
+        <div class="info-card">
+          <h4>🎓 Eligibility</h4>
+          <p>{{ course.eligibility }}</p>
+        </div>
+
+      </div>
+
+      <!-- APPLY BUTTON -->
+      <a href="/UserForm-kitps/" class="apply-btn">🚀 Apply Now</a>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- EXTRA SECTION -->
+<section class="extra-section">
+  <h3>What You'll Learn</h3>
+
+  <ul>
+    <li>✔ Practical Knowledge & Skills</li>
+    <li>✔ Real-world Projects</li>
+    <li>✔ Industry Exposure</li>
+    <li>✔ Placement Support</li>
+  </ul>
+</section>
+
+{% endblock %}

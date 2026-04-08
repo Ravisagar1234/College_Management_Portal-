@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <!-- Header -->
+  <section class="contact-hero">
+    <h1>Calculator</h1>
+     <section class="contact-wrap">
+    
+      <form  method="POST" class="contact-form" id="contactForm">
+        {% csrf_token %}
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+          please do not Click sumbit  without write value
+        </div>
+        {% endif %}
+        <input type="text" placeholder="Enter Any Number?" name="num1"/ class='form-control'/   >
+         
+
+        {% comment %} <input 
+            type="number"
+            name="num1"
+            placeholder="Enter Any Number?"
+            class="form-control"
+            required
+            oninvalid="this.setCustomValidity('Please enter a number first')"
+            oninput="this.setCustomValidity('')"
+            > {% endcomment %}
+        {% comment %} <button type='submitted' class='form-control'>calculate</button><br> {% endcomment %}
+        <button type='submit'>EVEN | ODD</button><br>
+        <label class='form-control' >Output</label>
+        <input type="text" value='{{result}}' class='form-control'/>
+      </form>  
+     
+     
+  </section>
+{% endblock %}
+  <!-- Footer -->
+{% block scripts %}
+  <script src="{% static 'JS/form.js' %}"></script>
+{% endblock %}     
+</body>
+</html>
+
+  
+ 

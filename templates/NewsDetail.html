@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-12">
+
+        <!-- Card -->
+        <div class="card shadow-lg border-0 p-4">
+
+          <!-- Title -->
+          <h2 class="text-center fw-bold mb-4">
+            {{ newDetails.news_title }}
+          </h2>
+
+          <!-- Image -->
+          <div class="text-center mb-4">
+            
+            {% if newDetails.news_image and newDetails.news_image != '' %}
+              <img src="{{ newDetails.news_image.url }}" 
+                  class="img-fluid rounded shadow-sm"
+                  style="max-height: 300px; object-fit: cover;"
+                  onerror="this.onerror=null; this.src='{% static 'Images/NewsDetail.png' %}';">
+
+            {% else %}
+              <img src="{% static 'Images/NewsDetail.png' %}" 
+                  class="img-fluid rounded shadow-sm"
+                  style="max-height: 300px; object-fit: cover;">
+            {% endif %}
+          </div>
+
+          <!-- Content -->
+          <div class="fs-5 text-secondary" style="line-height: 1.8;">
+            {{ newDetails.news_description | safe }}
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'JS/form.js' %}"></script>
+{% endblock %}

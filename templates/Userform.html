@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="form-hero">
+  <h1>Admission Open 2026</h1>
+  <p>Start your journey with Kothiwal Institute of Technologies & Professinal Studies. Fill the form and our team will contact you soon.</p>
+</section>
+
+<!-- MAIN SECTION -->
+<section class="form-section">
+
+  <!-- LEFT SIDE -->
+  <div class="form-left">
+    <img src="{% static 'Images/news3.png' %}" alt="Students">
+
+    <div class="info-box">
+      <h3>Why Join KITPS?</h3>
+      <ul>
+        <li>✔ Experienced Faculty</li>
+        <li>✔ Placement Support</li>
+        <li>✔ Modern Labs</li>
+        <li>✔ Industry Exposure</li>
+      </ul>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="info-box">
+      <h3>Admission Highlights</h3>
+      <ul>
+        <li>✔ Limited Seats Available</li>
+        <li>✔ Scholarship Opportunities</li>
+        <li>✔ 100% Placement Assistance</li>
+        <li>✔ Industry-Based Curriculum</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE FORM -->
+  <div class="form-right">
+    <form method="POST" action="{% url 'saveInquiry' %}" class="contact-form">
+      {% csrf_token %}
+
+      <h2>Apply Now</h2>
+
+      <!-- NAME -->
+      <input type="text" name="name" placeholder="Full Name" required>
+
+      <!-- EMAIL -->
+      <input type="email" name="email" placeholder="Email Address" required>
+
+      <!-- PHONE -->
+      <input type="text" name="phone" placeholder="Phone Number" required>
+
+      <!-- COURSE -->
+      <select name="course" required>
+        <option value="">Select Course</option>
+        <option>B.Tech (CSE)</option>
+        <option>Mechanical Engineering</option>
+        <option>Civil Engineering</option>
+        <option>Electrical Engineering</option>
+      </select>
+
+      <!-- QUALIFICATION -->
+      <input type="text" name="qualification" placeholder="Qualification (12th / Diploma)" required>
+
+      <!-- CITY -->
+      <input type="text" name="city" placeholder="Your City">
+
+      <!-- MESSAGE -->
+      <textarea name="message" placeholder="Your Query"></textarea>
+
+      <button type="submit" class="submit-btn">Submit Application</button>
+
+    </form>
+  </div>
+
+</section>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'JS/form.js' %}"></script>
+{% endblock %}

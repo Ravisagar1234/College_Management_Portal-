@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <!-- Header -->
+  <section class="contact-hero">
+    <h1>Calculator</h1>
+     <section class="contact-wrap">
+    
+      <form  method="POST" class="contact-form" id="contactForm">
+        {% csrf_token %}
+        <label>Value1</label>
+        <input type="text" name="num1"/ class='form-control'/>
+
+        <label>Select OPR.....</label>
+        <select name='Opr' class='form-control'/>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            
+
+        </select>
+         <label>Value2</label>
+        <input type="text" name="num2"/ class='form-control'/>
+
+        {% comment %} <button type='submitted' class='form-control'>calculate</button><br> {% endcomment %}
+        <button type='submitting'>Calculate</button><br>
+        <label class='form-control' >Output</label>
+        <input type="text" value='{{C}}' class='form-control'/>
+      </form>  
+     
+     
+  </section>
+{% endblock %}
+  <!-- Footer -->
+{% block scripts %}
+  <script src="{% static 'JS/form.js' %}"></script>
+{% endblock %}     
+</body>
+</html>
+
+  
+ 

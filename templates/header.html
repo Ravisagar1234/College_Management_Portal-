@@ -1,0 +1,33 @@
+{% load static %}
+
+<header class="navbar">
+
+  <!-- LEFT: LOGO -->
+  <div class="logo">
+    <img src="{% static 'Images/logo.png' %}" alt="Logo">
+    <span>KITPS</span>
+  </div>
+
+  <!-- CENTER: MENU -->
+  <nav class="menu">
+    <a class="{% if request.path == '/' %} active {% endif %}" href="{% url 'home' %}">Home</a>
+    <a class="{% if request.path == '/aboutPage-kitps/' %} active {% endif %}" href="{% url 'about' %}">About Us</a>
+    <a class="{% if request.path == '/NewsPage-kitps/' %} active {% endif %}" href="{% url 'news' %}">News</a>
+    <a class="{% if request.path == '/EventsPage-kitps/' %} active {% endif %}" href="{% url 'events' %}">Events</a>
+    <a class="{% if request.path == '/ContactPage-kitps/' %} active {% endif %}" href="{% url 'contact' %}">Contact</a>
+    <a class="{% if request.path == '/UserForm-kitps/' %} active {% endif %}" href="{% url 'form' %}">Form</a>
+  </nav>
+
+  <!-- 🔍 SEARCH BAR -->
+
+  <form action="{% url 'search' %}" method="GET" class="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input type="text" name="q" placeholder="Search courses..." id="searchInput">
+      <button type="submit" class="ai-btn"></button>
+  </form>
+
+</header>
+
+
+   
+ 

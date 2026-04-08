@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="success-container">
+
+  <div class="success-card">
+
+    <!-- SUCCESS ICON -->
+    <img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" alt="Success" class="icon">
+
+    <!-- TITLE -->
+    <h1>Application Submitted Successfully 🎉</h1>
+
+    <!-- MESSAGE -->
+    <p class="sub-text">
+      Thank you for choosing <b>KITPS</b>.<br>
+      Our team will contact you within <b>24 hours</b>.
+    </p>
+
+    <!-- BUTTONS -->
+    <div class="buttons">
+      <a href="/" class="btn primary">🏠 Go Home</a>
+      <a href="/courses/" class="btn secondary">📘 View Courses</a>
+    </div>
+
+    <!-- EXTRA INFO -->
+    <p class="note">
+      Need urgent help? Call us: 📞 <b>0591-2479707</b>
+    </p>
+
+  </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Optional auto redirect after 6 sec
+  setTimeout(() => {
+    window.location.href = "/";
+  }, 6000);
+</script>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+  <h2>Search Results for "{{ query }}"</h2>
+
+  <!-- ❌ No Results -->
+  {% if not course_results and not service_results and not news_results %}
+    <p>No results found</p>
+  {% endif %}
+
+  <!-- ✅ Courses -->
+  {% if course_results %}
+    <h3>Courses</h3>
+    {% for course in course_results %}
+      <div class="card mb-3 p-3">
+        <h4>{{ course.course_title }}</h4>
+        <p>{{ course.course_desc }}</p>
+        <small>Duration: {{ course.duration }} | Fees: {{ course.fees }}</small>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <!-- ✅ Services -->
+  {% if service_results %}
+    <h3>Services</h3>
+    {% for service in service_results %}
+      <div class="card mb-3 p-3">
+        <h4>{{ service.service_heading }}</h4>
+        <p>{{ service.service_desc }}</p>
+        <button class="btn btn-sm btn-primary">
+          {{ service.service_button }}
+        </button>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <!-- ✅ News -->
+  {% if news_results %}
+    <h3>News</h3>
+    {% for news in news_results %}
+      <div class="card mb-3 p-3">
+        <h4>{{ news.news_title }}</h4>
+        <p>{{ news.news_description }}</p>
+      </div>
+    {% endfor %}
+  {% endif %}
+
+</div>
+
+{% endblock %}
