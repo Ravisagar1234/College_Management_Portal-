@@ -1,1 +1,1 @@
-web: gunicorn Kitps.wsgi
+gunicorn Kitps.wsgi:application
